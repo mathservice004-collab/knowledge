@@ -5,8 +5,8 @@ import Input from '@/components/ui/Input';
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-40 w-full bg-[var(--bg-primary)]/80 backdrop-blur-xl border-b border-[var(--border-primary)]/30">
-            <div className="flex items-center justify-between h-20 px-8 lg:px-12">
+        <header className="sticky top-0 z-40 w-full bg-[var(--bg-primary)]/70 backdrop-blur-2xl border-b border-[var(--border-primary)]/20">
+            <div className="flex items-center justify-between h-16 px-8 lg:px-10">
                 {/* 검색바 */}
                 <div className="flex-1 max-w-2xl">
                     <div className="relative group">
