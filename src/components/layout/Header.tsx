@@ -5,16 +5,16 @@ import Input from '@/components/ui/Input';
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-40 w-full bg-[var(--bg-elevated)]/80 backdrop-blur-md border-b border-[var(--border-primary)]">
-            <div className="flex items-center justify-between h-16 px-6">
+        <header className="sticky top-0 z-40 w-full bg-[var(--bg-primary)]/80 backdrop-blur-xl border-b border-[var(--border-primary)]/30">
+            <div className="flex items-center justify-between h-20 px-8 lg:px-12">
                 {/* 검색바 */}
                 <div className="flex-1 max-w-2xl">
-                    <div className="relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-tertiary)]" size={18} />
+                    <div className="relative group">
+                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-tertiary)] group-focus-within:text-[var(--accent-primary)] transition-colors" size={18} />
                         <input
                             type="text"
-                            placeholder="검색어를 입력하세요 (Ctrl+K)"
-                            className="w-full pl-10 pr-4 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-primary)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-all"
+                            placeholder="찾고 싶은 내용을 검색하세요 (Ctrl+K)"
+                            className="w-full pl-12 pr-4 py-2.5 rounded-2xl bg-[var(--bg-secondary)]/50 border border-transparent text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:bg-[var(--bg-elevated)] focus:border-[var(--accent-primary)]/30 transition-all text-sm"
                         />
                     </div>
                 </div>

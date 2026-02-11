@@ -23,13 +23,13 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased font-pretendard">
         <ThemeProvider>
-          <div className="flex min-h-screen">
+          <div className="grid grid-cols-[280px_1fr] min-h-screen max-w-[100vw] overflow-x-hidden">
             <Sidebar />
-            <div className="flex-1 ml-64">
+            <div className="flex flex-col min-w-0 bg-[var(--bg-primary)]">
               <Header />
-              <main className="p-6">
+              <main className="p-8 lg:p-12 max-w-7xl w-full mx-auto">
                 {children}
               </main>
             </div>

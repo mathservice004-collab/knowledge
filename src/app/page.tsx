@@ -4,18 +4,18 @@ import RecentActivity from '@/components/dashboard/RecentActivity';
 export default function Home() {
   return (
     <div className="space-y-8">
-      <div className="fade-in">
-        <h1 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
-          대시보드
+      <div className="fade-in space-y-2">
+        <h1 className="text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">
+          인사이트 대시보드
         </h1>
-        <p className="text-[var(--text-secondary)]">
-          통합 지식 관리 시스템의 현황을 한눈에 확인하세요
+        <p className="text-lg text-[var(--text-secondary)] max-w-2xl">
+          지식 베이스의 실시간 현황과 지능형 인사이트를 확인하세요
         </p>
       </div>
 
       <StatsOverview />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <RecentActivity />
         </div>

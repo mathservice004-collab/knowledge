@@ -88,25 +88,30 @@ export default function RecentActivity() {
                 </button>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-1">
                 {mockRecentActivities.map((activity, index) => (
                     <div
                         key={activity.id}
-                        className="flex items-start gap-4 p-4 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors cursor-pointer group"
+                        className="flex items-start gap-5 p-5 rounded-2xl hover:bg-[var(--bg-secondary)]/50 transition-all cursor-pointer group"
                         style={{ animationDelay: `${index * 100}ms` }}
                     >
-                        <div className="p-2 rounded-lg bg-[var(--bg-tertiary)] text-[var(--text-secondary)] group-hover:bg-[var(--accent-primary)] group-hover:text-white transition-colors">
+                        <div className="p-3 rounded-xl bg-[var(--bg-secondary)] text-[var(--text-secondary)] group-hover:text-[var(--accent-primary)] transition-colors">
                             {getContextIcon(activity.type)}
                         </div>
 
                         <div className="flex-1 min-w-0">
-                            <div className="flex items-start justify-between gap-2">
-                                <h3 className="font-medium text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
+                            <div className="flex items-center justify-between gap-2">
+                                <h3 className="font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
                                     {activity.title}
                                 </h3>
-                                <Badge variant={getContextTypeBadge(activity.type)}>
-                                    {activity.type === 'event' ? '이벤트' : activity.type === 'artifact' ? '문서' : '인사이트'}
-                                </Badge>
+                                <div className="flex items-center gap-2">
+                                    <Badge variant={getContextTypeBadge(activity.type)}>
+                                        {activity.type === 'event' ? '이벤트' : activity.type === 'artifact' ? '문서' : '인사이트'}
+                                    </Badge>
+                                    <button className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-[var(--bg-tertiary)] rounded-lg">
+                                        <ExternalLink size={14} className="text-[var(--text-tertiary)]" />
+                                    </button>
+                                </div>
                             </div>
 
                             {'description' in activity && activity.description && (

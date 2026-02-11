@@ -16,14 +16,16 @@ export default function Sidebar() {
     const pathname = usePathname();
 
     return (
-        <aside className="fixed left-0 top-0 h-screen w-64 bg-[var(--bg-elevated)] border-r border-[var(--border-primary)] flex flex-col">
+        <aside className="sticky top-0 h-screen bg-[var(--bg-elevated)] border-r border-[var(--border-primary)] flex flex-col z-50">
             {/* 로고 */}
-            <div className="p-6 border-b border-[var(--border-primary)]">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] bg-clip-text text-transparent">
-                    Knowledge Hub
+            <div className="px-6 py-12">
+                <h1 className="text-3xl font-black bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] bg-clip-text text-transparent tracking-tighter leading-[0.9]">
+                    KNOWLEDGE<br />
+                    HUB
                 </h1>
-                <p className="text-sm text-[var(--text-tertiary)] mt-1">
-                    통합 지식 관리 시스템
+                <div className="w-10 h-1 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-full mt-6" />
+                <p className="text-[10px] font-bold text-[var(--text-tertiary)] uppercase tracking-[0.2em] mt-8 leading-none">
+                    Intelligence Hub
                 </p>
             </div>
 

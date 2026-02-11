@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { FileText, Calendar, Lightbulb, TrendingUp } from 'lucide-react';
 import Card from '@/components/ui/Card';
+import { cn } from '@/lib/utils';
 
 interface StatCardProps {
     title: string;
@@ -14,20 +15,25 @@ interface StatCardProps {
 
 function StatCard({ title, value, change, icon, trend }: StatCardProps) {
     return (
-        <Card className="fade-in">
+        <Card className="fade-in group">
             <div className="flex items-start justify-between">
                 <div>
-                    <p className="text-sm text-[var(--text-secondary)] mb-1">{title}</p>
-                    <h3 className="text-3xl font-bold text-[var(--text-primary)]">{value}</h3>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-tertiary)] mb-2">{title}</p>
+                    <h3 className="text-3xl font-bold text-[var(--text-primary)] tracking-tight">{value}</h3>
                     {change && (
-                        <p className={`text-sm mt-2 flex items-center gap-1 ${trend === 'up' ? 'text-[var(--accent-success)]' : 'text-[var(--accent-error)]'
+                        <p className={`text-sm mt-3 flex items-center gap-1.5 font-medium ${trend === 'up' ? 'text-[var(--accent-success)]' : 'text-[var(--accent-error)]'
                             }`}>
-                            <TrendingUp size={14} className={trend === 'down' ? 'rotate-180' : ''} />
+                            <span className={cn(
+                                "flex items-center justify-center w-5 h-5 rounded-full",
+                                trend === 'up' ? "bg-[var(--accent-success)]/10" : "bg-[var(--accent-error)]/10"
+                            )}>
+                                <TrendingUp size={12} className={trend === 'down' ? 'rotate-180' : ''} />
+                            </span>
                             {change}
                         </p>
                     )}
                 </div>
-                <div className="p-3 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)]">
+                <div className="p-4 rounded-2xl bg-[var(--bg-secondary)] text-[var(--accent-primary)] group-hover:bg-[var(--accent-primary)] group-hover:text-white transition-all duration-300">
                     {icon}
                 </div>
             </div>
